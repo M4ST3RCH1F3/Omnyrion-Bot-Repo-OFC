@@ -1,0 +1,7 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+[remote "origin"]
+	url = https://github.com/M4ST3RCH1F3/Omnyrion-Bot-Repo-OFC.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

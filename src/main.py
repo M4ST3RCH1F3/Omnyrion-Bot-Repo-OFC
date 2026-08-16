@@ -14,7 +14,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 
-PREFIXOS = ['Om!' , 'oM!' , 'OM!' , 'Om!' , '€']
+PREFIXOS = ['Om!' , 'oM!' , 'OM!' , 'Om!' , '€', 'om!']
 
 def get_prefix(bot, message):
   return commands.when_mentioned_or(*PREFIXOS)(bot, message)
@@ -22,6 +22,7 @@ def get_prefix(bot, message):
 bot = commands.Bot(
   command_prefix = get_prefix, 
   intents = intents, 
+  case_insensitive = 'True',
   help_command = None
 )
 
@@ -31,10 +32,12 @@ async def load_cmds():
   for filename in os.listdir(cmds_path):
     if filename.endswith('.py') and filename != '__init__.py':
       try:
-        await bot.load_extention(f"command-{filename[ : -3]}")
+        await bot.load_extension(f"cmds.{filename[ : -3]}")
         print(f"✅ Comando carregado com sucesso. | {filename}")
+        print(f"===================")
       except Exception as e:
         print(f"❎ Falha ao carregar o comando: | {filename} | {e}")
+        print(f"===================")
 
 @bot.event
 async def on_ready():
@@ -48,7 +51,7 @@ async def on_ready():
   await load_cmds()
 
   try:
-    await bot.tree.sync()
+    synced = await bot.tree.sync()
     print(f"✅ Comandos Slash sincronizados com Sucesso.")
     print(f"===================")
   except Exception as e:

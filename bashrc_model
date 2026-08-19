@@ -1,9 +1,8 @@
-
 # Auto-ativação do bot (já incluso no start.sh, mas mantido por segurança)
 clear && bash "/sdcard/Omnyrion Bot/start.sh"
 
 # Ligar o Bot
-alias botlive='clear && bash "/sdcard/Omnyrion Bot/start.sh"7'
+alias botlive='clear && bash "/sdcard/Omnyrion Bot/start.sh"'
 
 # Restartar o Bot
 alias botrelive='tmux kill-session -t omnyrion && clear && bash "/sdcard/Omnyrion Bot/start.sh"'
@@ -18,4 +17,4 @@ alias botkill='tmux kill-session -t omnyrion'
 alias botdir='cd "/sdcard/Omnyrion Bot"'
 
 # Sincronização do BASHRC (copia o .bashrc atual para o modelo)
-alias syncbash='cp "/sdcard/Omnyrion Bot/bashrc_model" ~/.bashrc && echo "✅ bashrc_model atualizado, Reiniciando..." && exit'
+alias syncbash='cp "/sdcard/Omnyrion Bot/bashrc_model" ~/.bashrc && source ~/.bashrc && echo "✅ bashrc atualizado."'

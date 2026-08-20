@@ -1,5 +1,2 @@
 discord.py
 python-dotenv
-python3
-git
-gh

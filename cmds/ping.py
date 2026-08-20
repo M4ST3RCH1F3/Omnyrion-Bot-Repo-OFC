@@ -20,7 +20,7 @@ class Ping(commands.Cog):
   @commands.command(name='ping')
   async def ping(self, ctx):
     mensagem = (
-      f"**Pong.**\n"
+      f"\n**Pong.**\n"
       f"**Tempo de resposta:** {self._get_anstime()}ms\n"
       f"**Ativo há:** {self._get_uptime()}"
     )
@@ -34,7 +34,7 @@ class Ping(commands.Cog):
   @app_commands.command(name = 'ping', description = 'Esse comando mostra o tempo de atividade e/ou resposta do bot.')
   async def ping_slash(self, interaction:discord.Interaction):
     mensagem = (
-      f"**Pong.**\n"
+      f"\n**Pong.**\n"
       f"**Tempo de resposta:** {self._get_anstime()}ms\n"
       f"**Ativo há:** {self._get_uptime()}"
     )

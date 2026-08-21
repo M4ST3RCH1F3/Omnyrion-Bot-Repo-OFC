@@ -7,7 +7,7 @@ class SysAdm(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 
-	@app_commands.command(name='sync', description='Sincroniza os comandos Slash do bot.')
+	@app_commands.command(name='sync', description='Sincroniza todos os comandos do bot.')
 	async def sync(self, interaction: discord.Interaction):
 		if interaction.user.id != interaction.guild.owner_id and not interaction.user.guild_permissions.administrator:
 			await interaction.response.send_message("Você não é dono, muito menos não tem permissões o suficiente para isso.", ephemeral = True)
